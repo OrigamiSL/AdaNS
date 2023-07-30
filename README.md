@@ -393,10 +393,11 @@ Here we provide a more detailed and complete command description for training an
 
 The experiment parameters of each dataset are formated in the files within the directory `./scripts/`. You can refer to these parameters for experiments, and you can also adjust the parameters to obtain better mse and mae results or draw better prediction figures. We provide the commands for obtain the results of AdaNS with hyper-parameters fine-tuning of ETT datasets in the files `./scripts/Tuned.sh` and the corresponding checkpoints in the directory `./tuned_checkpoints/`. 
 
+
 <p align="center">
 <img src="./img/Multivariate.png" height = "500" alt="" align=center />
 <br><br>
-<b>Figure 2.</b> Multivariate forecasting results
+<b>Figure 2.</b> Univariate forecasting results
 </p>
 
 <p align="center">
