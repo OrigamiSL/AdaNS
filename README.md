@@ -107,7 +107,7 @@ The folder tree in https://drive.google.com/drive/folders/1Gv1MXjLo5bLGep4bsqDya
 | | |-submission-Naive2.rar
 ```
 
-Then you can run `./data/preprocess.py` to preprocess the raw data of Air and Light datasets. We replace the missing values, which are tagged with -200 value, by the average values of normal ones. We remove the variable 'NMHC(GT)' in Air dataset in that all data of thisvariable in test subset is missing. We remove two random variables, i.e., 'rv1' and 'rv2', in Light dataset. After you successfully run `./data/preprocess.py`, you will obtain folder tree:
+Then you can run `./data/preprocess.py` to preprocess the raw data of Air and Light datasets. We replace the missing values, which are tagged with -200 value, by the average values of normal ones. We remove the variable `NMHC(GT)` in Air dataset in that all data of thisvariable in test subset is missing. We remove two random variables, i.e., `rv1` and `rv2`, in Light dataset. After you successfully run `./data/preprocess.py`, you will obtain folder tree:
 
 ```
 |-data
@@ -393,11 +393,10 @@ Here we provide a more detailed and complete command description for training an
 
 The experiment parameters of each dataset are formated in the files within the directory `./scripts/`. You can refer to these parameters for experiments, and you can also adjust the parameters to obtain better mse and mae results or draw better prediction figures. We provide the commands for obtain the results of AdaNS with hyper-parameters fine-tuning of ETT datasets in the files `./scripts/Tuned.sh` and the corresponding checkpoints in the directory `./tuned_checkpoints/`. 
 
-
 <p align="center">
-<img src="./img/Multivariate.png" height = "500" alt="" align=center />
+<img src="./img/Mutivariate.png" height = "500" alt="" align=center />
 <br><br>
-<b>Figure 2.</b> Univariate forecasting results
+<b>Figure 2.</b> Multivariate forecasting results
 </p>
 
 <p align="center">
