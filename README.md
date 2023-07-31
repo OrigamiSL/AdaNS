@@ -8,7 +8,7 @@ This is the origin Pytorch implementation of AdaNS in the following paper:
 [An Adaptive Network with Consecutive and Intertwined Slices for Real-world Time-Series Forecasting] (Manuscript submitted to INS).
 
 ## The Entire Architecture of AdaNS
-The backbone of AdaNS can be divided into two stages, as shown in Figure 1. The input sequence length is assumed to $2^n \times T_s$ and variables are categorized into different groups according to different $T_s$. We only discuss the network for an arbitrary variable group with variable numbers $V_a (V_a ≤ V)$ as the networks for other groups are similar. Moreover, we have also mentioned that the input sequence is sliced by half, concatenated to acquire features and embedded to prepare for feature extraction in AdaNS with FVS feature selection strategy. Then, the embedded input tensor is sent to the first stage for universally periodic feature extraction.
+The backbone of AdaNS can be divided into two stages, as shown in Figure 1. The input sequence length is assumed to $2^n \cdot T_s$ and variables are categorized into different groups according to different $T_s$. We only discuss the network for an arbitrary variable group with variable numbers $V_a (V_a ≤ V)$ as the networks for other groups are similar. Moreover, we have also mentioned that the input sequence is sliced by half, concatenated to acquire features and embedded to prepare for feature extraction in AdaNS with FVS feature selection strategy. Then, the embedded input tensor is sent to the first stage for universally periodic feature extraction.
 <p align="center">
 <img src="./img/Architecture.png" height = "320" alt="" align=center />
 <br><br>
@@ -165,7 +165,7 @@ Then you can run `./data/preprocess.py` to preprocess the raw data of Air and Li
 ```
 
 ## Baseline
-We select seven typical deep time series forecasting models, i.e., MICN, Scaleformer, FiLM, PatchTST, Crossformer, DLinear, N-HiTS as baselines in multivariate/univariate forecasting experiments. Their source codes origins are given below:
+We select seven typical deep time series forecasting models, i.e., MICN, Scaleformer, FiLM, PatchTST, Crossformer, DLinear and N-HiTS as baselines in multivariate/univariate forecasting experiments. Their source codes origins are given below:
 
 | Baseline | Source Code |
 |:---:|:---:|
@@ -361,7 +361,7 @@ Here we provide a more detailed and complete command description for training an
 |     target     |Target feature in `S` task|
 |  checkpoints   |Location of model checkpoints |
 |  tuned_checkpoints   |Location of tuned model checkpoints |
-| sample_train | The length of sampled sequence to seek `fs` and `Ts`|
+| sample_train | The length of sampled sequence to seek $f_s$ and $T_s$|
 | lmb |𝜆, one of the hyper-parameters used in outlier filter(year=6.25, season=1600, month=129600) |
 | c | One of the hyper-parameters used in outlier filter|
 | piece_len |The length of Ts, acqured by latter codes |
@@ -394,13 +394,13 @@ Here we provide a more detailed and complete command description for training an
 The experiment parameters of each dataset are formated in the files within the directory `./scripts/`. You can refer to these parameters for experiments, and you can also adjust the parameters to obtain better mse and mae results or draw better prediction figures. We provide the commands for obtain the results of AdaNS with hyper-parameters fine-tuning of ETT datasets in the files `./scripts/Tuned.sh` and the corresponding checkpoints in the directory `./tuned_checkpoints/`. 
 
 <p align="center">
-<img src="./img/Mutivariate.png" height = "500" alt="" align=center />
+<img src="./img/Mutivariate.png" height = "700" alt="" align=center />
 <br><br>
 <b>Figure 2.</b> Multivariate forecasting results
 </p>
 
 <p align="center">
-<img src="./img/Univariate.png" height = "500" alt="" align=center />
+<img src="./img/Univariate.png" height = "400" alt="" align=center />
 <br><br>
 <b>Figure 3.</b> Univariate forecasting results
 </p>
